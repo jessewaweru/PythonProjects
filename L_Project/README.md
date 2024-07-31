@@ -35,7 +35,7 @@ As someone aspiring for a data role, I wanted to educate myself further to know 
 
 View my notebook showcasing the steps I took:
 
-[2_Skill_Demand.ipynb](L_Project\2_Skill_Demand.ipynb)
+[2_Skill_Demand.ipynb](2_Skill_Demand.ipynb)
 
 ## You can visualise the data using:
 
@@ -86,7 +86,8 @@ plt.show()
 Next, I filtered the data to showcase the how popular the top 5 skills for Data Analysts are by comparing the job postings for each skill on a month by month basis for the year 2023 so that I could establish potential trends in the data.
 
 View my notebook showcasing the steps I took:
-[3_SkillsTrend.ipynb](L_Project\3_Skills_Trend.ipynb)
+
+[3_SkillsTrend.ipynb](3_Skills_Trend.ipynb)
 
 ### Visualize the Data
 
@@ -120,7 +121,7 @@ plt.show()
 
 View my notebook showcasing the steps I took:
 
-[4_SalaryAnalysis.ipynb](L_Project/4_SalaryAnalysis.ipynb)
+[4_SalaryAnalysis.ipynb](4_SalaryAnalysis.ipynb)
 
 ### Here is an overview of the code used to generate a boxplot showcasing the salary distribution of the top six Data jobs in the US.
 
@@ -194,7 +195,7 @@ There were issues with two of the skills overlapping in the graph so I had to re
 
 View my notebook showcasing the steps I took:
 
-[5_OptimalSkills.ipynb](L_Project/5_OptimalSkills.ipynb)
+[5_OptimalSkills.ipynb](5_OptimalSkills.ipynb)
 
 #### Code for the Data visualization
 
