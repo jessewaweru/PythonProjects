@@ -183,13 +183,13 @@ fig.tight_layout()
 
 ### Insights
 
-- One of the first inisghts I gathered is the clear differences in pay between the high paying and the most in-demand skills. In the first graph, debian pays close to 200,000 dollars a year while the highest paying skill for the highly demanded ones is spark whcih is under 140,000 dollars a year.
+- One of the first insights I gathered is the clear differences in pay between the high paying and the most in-demand skills. In the first graph, debian pays close to 200,000 dollars a year while the highest paying skill for the highly demanded ones is spark whcih is under 140,000 dollars a year.
 - Most of the highest paying skills have low demand count and are distributed across different fields such as machine learning, automation, natural languange processing and cloud computing.
 - For an aspiring Data analyst who want to growth and develop in their respective field, it's better to focus on the most demanded skills considering that the pay is still high.
 
 ## 4. What's the optimal skill to learn for a Data Analyst?
 
-I generated a merged two folders that included the top skills in-demand for Data Analysts as a percentage of the jobs psotings in the market and compared it with their median salary averages which I then plotted on a scatterplot.
+I merged two folders that included the top skills in-demand for Data Analysts as a percentage of the jobs psotings in the market and compared it with their median salary averages which I then plotted on a scatterplot.
 
 There were issues with two of the skills overlapping in the graph so I had to research and find a workaround.
 
@@ -256,11 +256,11 @@ plt.show()
 
 ### Insights
 
-- First insight that comes out when you see the plot is how many of the skills are programming and analytical related.
+- First insight that comes out when you see the plot is how many of the skills are related to programming and analytics.
 
 - Most of the programming skills pay much higher as seen from the plot starting at 90,000 dollars and above compared to other skills while Database and cloud skills such as Oracle and SQL server pay very well but are not nearly demanded by employers as per the perccentage of job postings across the Job market
 
-- The most optimal skill to have as per the plot is python. It is highly demanded when you look at its percentage of Data Analyst jobs that ask for it and it is among the highest paying skills for Data Analyst i.e. close to 98,000 dollars per year as its median salary.
+- The most optimal skill to have is python. It is highly demanded when you look at its percentage of Data Analyst jobs that ask for it and it is among the highest paying skills for Data Analyst i.e. close to 98,000 dollars per year as its median salary.
 
 
 # Conclusions
