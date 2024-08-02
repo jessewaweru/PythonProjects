@@ -1,5 +1,5 @@
 # Introduction
-The Datase I used is for the Job market! I specifically focused on Data Analyst roles, exploring problem statements such as Top-paying jobs, Top in-demand skills, and best optimal skills for Data analysts i.e. where high demand meets high salary. 
+The Dataset I used is for the Data Jobs market in the world in 2023. I specifically focused on Data Analyst roles, exploring problem statements such as Top-paying jobs, Top in-demand skills, and best optimal skills for Data analysts i.e. where high demand meets high salary. 
 Furthermore, I decided to focus mostly with the roles being offered in the United states. The data was much more detailed and it was a great comparison to use to better the Data Job market.
 
 Here are the Python code snippets I used to generate my various insights:
@@ -7,27 +7,81 @@ Here are the Python code snippets I used to generate my various insights:
 
 
 # Background
-I was interested in knowing how the job market for Data Analyst looks like in a more consise way. I decided to use this dataset that showcases insights such as job titles, salaries, locations, companies offering them,skills associated with each job posting and more. I got the dataset from a YouTube channel of a data analyst called Lukebarousse.
+I was interested in knowing how the job market for Data Roles looked like in a more consise way back in 2023. I decided to use this dataset that showcases insights such as job titles, salaries, locations, companies offering them,skills associated with each job posting and more. I got the dataset from a YouTube channel of a data analyst called Luke barousse.
 
 #### Problem statements I answered using Python
-1. What are the most demanded skills for the top 3 most popular data roles in the US?
-2. What's the trend of in-demand skills for Data Analysts?
-3. How well do jobs and skills pay for Data roles?
-4. How do the highest paying skills and the most in-demand skills for Data Analyst compare against each other?
-5. What's the optimal skill to learn for a Data Analyst?
+The following are the questions I wanted to answer as part of my analysis of the dataset:
+
+1. Which countries in Europe have the highest Job postings in Data and what Skill is highly demanded for each country?
+2. What are the most demanded skills for the top 3 most popular data roles in the US?
+3. What's the trend of in-demand skills for Data Analysts?
+4. How well do jobs and skills pay for Data roles?
+5. How do the highest paying skills and the most in-demand skills for Data Analyst compare against each other?
+6. What's the optimal skill to learn for a Data Analyst?
 
 
 # Tools I used
 The tools I used to generate my insights for the project include the following:
 - **Python**
-- **Visual Studio Code**: My ideal code editor for SQL queries
+- **Visual Studio Code**: My ideal code editor for Python and also SQL.
 - **Git and GitHub:** Needed a version control to showcase the steps and changes  made as I progressed with my analysis. It's also ideal for sharing and collaboration purposes.
 
 # The Analysis
 
-## 1. What are the most demanded skills for the top 3 most popular data roles in the US?
+## 1. Which countries in Europe have the highest Job postings in Data and what Skill is highly demanded for each country?
 
-I decided to filter out the dataset to find out the most in demand positions for Data roles by count and I got the top three. 
+I decided to  start by filtering the dataset to find out how the demand for Data jobs looks like in Europe, how lucrative they are in terms of salary and what skill is the most in-demand for each country
+
+View my notebook showcasing the steps I took:
+
+[2_EuropeDemand&Skills](2_EuropeDemand&Skills.ipynb)
+
+## This is the code snippet I used to create my visualization:
+
+```python
+ax = sns.barplot(data= df_topSkills_merged, x= 'country_size', y='job_country', hue='median', legend= 'full', palette= 'ch:s=.25,rot=-.25')
+sns.despine()
+sns.set_theme(style='ticks')
+sns.move_legend(ax, 'lower right', bbox_to_anchor=(1.3,0.01))
+
+from adjustText import adjust_text
+
+plt.title('Data Job Postings in Europe and Top Skill Demanded per Country', fontsize= 16)
+plt.ylabel('')
+plt.xlabel('Count of Job Postings')
+
+texts = []
+
+for i in range(len(df_topSkills_merged)):
+    c_size = df_topSkills_merged['country_size'].iloc[i]
+    country = df_topSkills_merged['job_country'].iloc[i]
+    j_skill = df_topSkills_merged['job_skills'].iloc[i]
+    
+    text = plt.text(c_size +3, country , j_skill, va='center', ha='left', color='black')
+    texts.append(text)
+    
+    
+plt.show()
+```
+
+### Result
+
+![Visualization of Job postings in Europe and to skill demanded per country](L_Project/images/EuropeDemand&Skills.png)
+*Bar graph visualizing the Job postings in Europe and top skill demand per country.*
+
+### Insights
+
+- The United Kingdom leads considerably in the number of potential Data Jobs in Europe while also paying a respectable salary i.e. over 200 job postings.
+
+- Germany, Poland and Portugal have between 100 to 125 Data Job postings and are paying more than the UK i.e. over 108,000 dollars in median salary per year.
+
+- From the looks of it, the countries mentioned above are the ones to look for anyone leaving in the Europe it just depends whether you are comfortable with abundance of potential employment opportunities or higher pay. 
+
+- Germany, Poland and Portugal are the optimal regions for anyone leaving in the European union since the jobs are available and they pay considerably more.
+
+## 2. What are the most demanded skills for the top 3 most popular data roles in the US?
+
+I decided to filter the dataset to find out the most in demand positions for Data roles by count and I got the top three. 
 
 Next I proceeded to further filter out the dataset using the skills that are highly demanded for the top 3 positions.
 As someone aspiring for a data role, I wanted to educate myself further to know which skills are giong to be demanded most often by future employers.
@@ -35,7 +89,7 @@ As someone aspiring for a data role, I wanted to educate myself further to know 
 
 View my notebook showcasing the steps I took:
 
-[2_Skill_Demand.ipynb](2_Skill_Demand.ipynb)
+[3_Skill_Demand.ipynb](3_Skill_Demand.ipynb)
 
 ## You can visualise the data using:
 
@@ -81,13 +135,13 @@ plt.show()
 - Data Engineer skills are more specialiszed compared to the two mentioned above with skills such as AWS, Azure and Spark preferred for the role. However, it still has Python and SQL as the most in demand skills.
 
 
-## 2. What's the trend of in-demand skills for Data Analysts?
+## 3. What's the trend of in-demand skills for Data Analysts?
 
 Next, I filtered the data to showcase the how popular the top 5 skills for Data Analysts are by comparing the job postings for each skill on a month by month basis for the year 2023 so that I could establish potential trends in the data.
 
 View my notebook showcasing the steps I took:
 
-[3_SkillsTrend.ipynb](3_Skills_Trend.ipynb)
+[4_SkillsTrend.ipynb](4_Skills_Trend.ipynb)
 
 ### Visualize the Data
 
@@ -116,12 +170,12 @@ plt.show()
 - SQL is still consistently the moment demanded skill for Data analyst followed by Excel which still remains a major requirement for employers. Tableau and Python are closely matched to each other with minor fluctuations relative to job postings.
 
 
-## 3. 
-### 3.1 How well do jobs and skills pay for Data roles?
+## 4. 
+### 4.1 How well do jobs and skills pay for Data roles?
 
 View my notebook showcasing the steps I took:
 
-[4_SalaryAnalysis.ipynb](4_SalaryAnalysis.ipynb)
+[5_SalaryAnalysis.ipynb](5_SalaryAnalysis.ipynb)
 
 ### Here is an overview of the code used to generate a boxplot showcasing the salary distribution of the top six Data jobs in the US.
 
@@ -149,7 +203,7 @@ plt.show()
 
 - The median salary also increases with seniority and is progressing step by step from Data Analyst to Data Engineer to Data Scientist.
 
-### 3.2 How do the highest paying skills and the most in-demand skills for Data Analyst compare against each other?
+### 4.2 How do the highest paying skills and the most in-demand skills for Data Analyst compare against each other?
 
 #### Here is an overview of the code used to generate a bargraph showcasing the comparison
 
@@ -187,7 +241,7 @@ fig.tight_layout()
 - Most of the highest paying skills have low demand count and are distributed across different fields such as machine learning, automation, natural languange processing and cloud computing.
 - For an aspiring Data analyst who want to growth and develop in their respective field, it's better to focus on the most demanded skills considering that the pay is still high.
 
-## 4. What's the optimal skill to learn for a Data Analyst?
+## 5. What's the optimal skill to learn for a Data Analyst?
 
 I merged two folders that included the top skills in-demand for Data Analysts as a percentage of the jobs psotings in the market and compared it with their median salary averages which I then plotted on a scatterplot.
 
@@ -195,7 +249,7 @@ There were issues with two of the skills overlapping in the graph so I had to re
 
 View my notebook showcasing the steps I took:
 
-[5_OptimalSkills.ipynb](5_OptimalSkills.ipynb)
+[6_OptimalSkills.ipynb](6_OptimalSkills.ipynb)
 
 #### Code for the Data visualization
 
